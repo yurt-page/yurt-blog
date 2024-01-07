@@ -1,8 +1,15 @@
 import { Icon16Add, Icon28GhostSimpleOutline } from '@vkontakte/icons';
-import { Button, Div, Panel, PanelHeader, PanelHeaderContent } from '@vkontakte/vkui';
+import {
+  Button,
+  Div,
+  Panel,
+  PanelHeader,
+  PanelHeaderContent
+} from '@vkontakte/vkui';
 import React, { useCallback, useEffect, useState } from 'react';
 import { API } from '../utils/API';
 import BlogCard from '../components/ui/BlogCard/BlogCard';
+import PropTypes from 'prop-types';
 
 const Home = ({ id }) => {
   const [posts, setPosts] = useState({ isLoading: true, data: [] });
@@ -41,10 +48,10 @@ const Home = ({ id }) => {
         </Button>
         {posts.data.length > 0
           ? posts.data.map(({ id, title, image, updated, text }) => (
-              <BlogCard key={id} title={title} image={image} updated={updated}>
-                {text}
-              </BlogCard>
-            ))
+            <BlogCard key={id} title={title} image={image} updated={updated}>
+              {text}
+            </BlogCard>
+          ))
           : 'No posts in this blog yet'}
         {API.pageCount > currentPage && (
           <Div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
@@ -57,5 +64,21 @@ const Home = ({ id }) => {
     </Panel>
   );
 };
+
+Home.propTypes = {
+  id: PropTypes.string.isRequired,
+  /*
+    go: PropTypes.func.isRequired,
+    fetchedUser: PropTypes.shape({
+      photo_200: PropTypes.string,
+      first_name: PropTypes.string,
+      last_name: PropTypes.string,
+      city: PropTypes.shape({
+        title: PropTypes.string
+      })
+    })
+  */
+};
+
 
 export default Home;
