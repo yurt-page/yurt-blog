@@ -1,3 +1,4 @@
+import React, { createContext, useState, useEffect } from 'react';
 import {
   AppRoot,
   Div,
@@ -14,7 +15,9 @@ import {
   View,
   ViewWidth,
 } from '@vkontakte/vkui';
-import React, { createContext, useState } from 'react';
+import '@vkontakte/vkui/dist/vkui.css';
+
+
 import Home from './panels/Home';
 import NotImplemented from './panels/NotImplemented';
 import SiteLogo from './assets/img/logo.svg';
