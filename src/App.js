@@ -15,8 +15,8 @@ import {
   ViewWidth,
 } from '@vkontakte/vkui';
 import React, { createContext, useState } from 'react';
-import Home from './components/panels/Home';
-import NotImplemented from './components/panels/NotImplemented';
+import Home from './panels/Home';
+import NotImplemented from './panels/NotImplemented';
 import SiteLogo from './assets/img/logo.svg';
 
 export const AppContext = createContext({});

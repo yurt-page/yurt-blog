@@ -1,8 +1,8 @@
-import { Icon16Add, Icon28GhostSimleOutline } from '@vkontakte/icons';
+import { Icon16Add, Icon28GhostSimpleOutline } from '@vkontakte/icons';
 import { Button, Div, Panel, PanelHeader, PanelHeaderContent } from '@vkontakte/vkui';
 import React, { useCallback, useEffect, useState } from 'react';
-import { API } from '../../utils/API';
-import BlogCard from '../ui/BlogCard/BlogCard';
+import { API } from '../utils/API';
+import BlogCard from '../components/ui/BlogCard/BlogCard';
 
 const Home = ({ id }) => {
   const [posts, setPosts] = useState({ isLoading: true, data: [] });
@@ -25,7 +25,7 @@ const Home = ({ id }) => {
   return (
     <Panel id={id}>
       <PanelHeader>
-        <PanelHeaderContent status="Public Blog" before={<Icon28GhostSimleOutline />}>
+        <PanelHeaderContent status="Public Blog" before={<Icon28GhostSimpleOutline />}>
           Name Surname
         </PanelHeaderContent>
       </PanelHeader>
